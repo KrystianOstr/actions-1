@@ -15,7 +15,10 @@ jobs:
           ls
           cat README.md
           
-      - name: ASCII dragon
-        run: cowsay -f dragon "run" >> dragon.txt
+      # - name: ASCII dragon
+      #   run: cowsay -f dragon "run" >> dragon.txt
 
-        
+      - name: cowsay import
+        uses: gr2m/cowsay-action@v1.x
+        with:
+          text: "Hello"
