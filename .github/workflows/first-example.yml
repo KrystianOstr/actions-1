@@ -9,16 +9,8 @@ jobs:
       - name: checkout
         uses: actions/checkout@v6
 
-      - name: Welcome message, etc
-        run: |
-          echo "My first GHA job" 
-          ls
-          cat README.md
-          
-      # - name: ASCII dragon
-      #   run: cowsay -f dragon "run" >> dragon.txt
+      - name: list repo
+        run: ls -ltra
 
-      - name: cowsay import
-        uses: gr2m/cowsay-action@v1.x
-        with:
-          text: "Hello"
+      - name: executing shell script
+        run: ./ascii-script.sh
