@@ -20,22 +20,33 @@ jobs:
           chmod +x ascii-script.sh
           ./ascii-script.sh
 
-      - name: sleep 30
-        run: sleep 30
+      - name: upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: dragon-text-file
+          path: dragon.txt
 
   test_job_2:
     needs: [build_job_1]
     runs-on: ubuntu-latest
     steps:
-      - name: sleep 10
-        run: sleep 10
+      - name: download artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: dragon-text-file
 
       - name: test file
         run: grep -i "dragon" dragon.txt
+
 
   deploy_job_3:
     needs: [test_job_2]
     runs-on: ubuntu-latest
     steps:
+      - name: download artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: dragon-text-file
+
       - name: read file
         run: cat dragon.txt
