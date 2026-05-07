@@ -6,6 +6,9 @@ jobs:
   first_job:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v6
+
       - name: Welcome message
         run: echo "My first GHA job" 
       
