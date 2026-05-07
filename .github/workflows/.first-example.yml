@@ -1,6 +1,8 @@
 name: First workflow
 
-on: push
+on: 
+  # push
+  workflow_dispatch:
 
 jobs:
   build_job_1:
