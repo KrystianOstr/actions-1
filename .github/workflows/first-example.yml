@@ -9,11 +9,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v6
 
-      - name: Welcome message
-        run: echo "My first GHA job" 
-      
-      - name: List files
-        run: ls
-
-      - name: Read file
-        run: cat README.md
+      - name: Welcome message, etc
+        run: |
+          echo "My first GHA job" 
+          ls
+          cat README.md
+          
+      - name: ASCII dragon
+        run: cowsay -f dragon "run" >> dragon.txt
