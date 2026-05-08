@@ -1,4 +1,4 @@
-name: workflow dispatch
+name: workflow filters
 
 on:
   workflow_dispatch:
